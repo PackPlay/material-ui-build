@@ -186,11 +186,13 @@ function getStyles(props, context) {
       top: 0,
       left: open ? 0 : -10000,
       width: '100%',
-      height: '100%'
+      height: '100%',
+      transition: open ? _transitions2.default.easeOut('0ms', 'left', '0ms') : _transitions2.default.easeOut('0ms', 'left', '450ms')
     },
     content: {
       boxSizing: 'border-box',
       WebkitTapHighlightColor: 'rgba(0,0,0,0)', // Remove mobile color flashing (deprecated)
+      transition: _transitions2.default.easeOut(),
       position: 'relative',
       width: '75%',
       maxWidth: spacing.desktopKeylineIncrement * 12,

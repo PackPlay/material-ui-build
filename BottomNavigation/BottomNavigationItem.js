@@ -45,7 +45,10 @@ function getStyles(props, context) {
       paddingLeft: 12,
       paddingRight: 12,
       minWidth: 80,
-      maxWidth: 168
+      maxWidth: 168,
+      borderBottomStyle: selected ? 'solid' : 'none',
+      borderBottomWidth: selected ? 2 : 0,
+      borderBottomColor: bottomNavigation.selectedColor
     },
     label: {
       fontSize: selected ? bottomNavigation.selectedFontSize : bottomNavigation.unselectedFontSize,
