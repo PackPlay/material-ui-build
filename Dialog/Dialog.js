@@ -115,8 +115,7 @@ var TransitionItem = function (_Component) {
 
       this.setState({
         style: {
-          opacity: 1,
-          transform: 'translate(0, ' + spacing.desktopKeylineIncrement + 'px)'
+          opacity: 1
         }
       });
 
@@ -127,8 +126,7 @@ var TransitionItem = function (_Component) {
     value: function componentWillLeave(callback) {
       this.setState({
         style: {
-          opacity: 0,
-          transform: 'translate(0, 0)'
+          opacity: 0
         }
       });
 
@@ -186,8 +184,7 @@ function getStyles(props, context) {
       top: 0,
       left: open ? 0 : -10000,
       width: '100%',
-      height: '100%',
-      transition: open ? _transitions2.default.easeOut('0ms', 'left', '0ms') : _transitions2.default.easeOut('0ms', 'left', '450ms')
+      height: '100%'
     },
     content: {
       boxSizing: 'border-box',
@@ -287,20 +284,20 @@ var DialogInline = function (_Component2) {
       var container = _reactDom2.default.findDOMNode(this);
       var dialogWindow = _reactDom2.default.findDOMNode(this.refs.dialogWindow);
       var dialogContent = _reactDom2.default.findDOMNode(this.refs.dialogContent);
-      var minPaddingTop = 16;
+      // const minPaddingTop = 0;
 
       // Reset the height in case the window was resized.
       dialogWindow.style.height = '';
       dialogContent.style.height = '';
 
       var dialogWindowHeight = dialogWindow.offsetHeight;
-      var paddingTop = (clientHeight - dialogWindowHeight) / 2 - 64;
-      if (paddingTop < minPaddingTop) paddingTop = minPaddingTop;
+      // let paddingTop = ((clientHeight - dialogWindowHeight) / 2) - 64;
+      // if (paddingTop < minPaddingTop) paddingTop = minPaddingTop;
 
       // Vertically center the dialog window, but make sure it doesn't
       // transition to that position.
       if (repositionOnUpdate || !container.style.paddingTop) {
-        container.style.paddingTop = paddingTop + 'px';
+        container.style.paddingTop = 15 + 'px';
       }
 
       // Force a height if the dialog is taller than clientHeight
